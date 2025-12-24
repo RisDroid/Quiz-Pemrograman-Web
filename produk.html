@@ -1,244 +1,87 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Produk & Jasa Joki</title>
-
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-
-  <!-- CSS BIKIN GAMBAR SERAGAM -->
-  <style>
-    .produk-item .card-img-top {
-      height: 200px;
-      object-fit: cover;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Produk - Ris Store</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<style>
+body.dark { background-color:#121212; color:#f1f1f1; }
+body.dark .card, body.dark .list-group-item{ background-color:#1e1e1e; color:#fff; }
+.mode-icon{ font-size:1.2rem; transition:0.3s; }
+.produk-item .card-img-top{ height:200px; object-fit:cover; }
+</style>
 </head>
-
 <body class="bg-light">
 
-<!-- ================= NAVBAR ================= -->
+<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-    <a class="navbar-brand" href="index.html">Ris Store</a>
-    <ul class="navbar-nav ms-auto">
-      <li class="nav-item"><a class="nav-link" href="index.html">Profil</a></li>
-      <li class="nav-item"><a class="nav-link active" href="produk.html">Produk</a></li>
-      <li class="nav-item"><a class="nav-link" href="interaktif.html">Interaktif</a></li>
-      <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
-      <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
-    </ul>
-  </div>
+<div class="container">
+<a class="navbar-brand fw-bold" href="index.html">Ris Store</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ms-auto gap-3 align-items-lg-center">
+<li class="nav-item"><a class="nav-link" href="index.html">Profil</a></li>
+<li class="nav-item"><a class="nav-link active" href="produk.html">Produk</a></li>
+<li class="nav-item"><a class="nav-link" href="interaktif.html">Interaktif</a></li>
+<li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
+<li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+<li class="nav-item">
+<div class="form-check form-switch text-white d-flex align-items-center gap-2">
+<i id="sunIcon" class="bi bi-sun-fill mode-icon"></i>
+<input class="form-check-input" type="checkbox" id="darkSwitch">
+<i id="moonIcon" class="bi bi-moon-fill mode-icon"></i>
+</div>
+</li>
+</ul>
+</div>
+</div>
 </nav>
 
-<!-- ================= HEADER ================= -->
-<div class="container text-center my-5">
-  <h1>Produk & Jasa Joki Game</h1>
-  <p class="text-muted">Layanan joki MLBB & Genshin Impact</p>
+<!-- PRODUK -->
+<div class="container my-5">
+<div class="row row-cols-1 row-cols-md-3 g-4">
+<!-- contoh produk -->
+<div class="col produk-item" data-kategori="joki">
+<div class="card h-100 shadow">
+<img src="foto/Gemini_Generated_Image_v27ztrv27ztrv27z.png" class="card-img-top">
+<div class="card-body"><span class="badge bg-success mb-2">MLBB</span>
+<h5>Joki Rank MLBB</h5><p>Rp 2.000 / bintang</p></div>
+<div class="card-footer"><button class="btn btn-success w-100">Pesan</button></div>
 </div>
-
-<!-- ================= FILTER ================= -->
-<div class="container text-center mb-4">
-  <button class="btn btn-outline-primary me-2" onclick="filterProduk('all')">Semua</button>
-  <button class="btn btn-outline-success me-2" onclick="filterProduk('joki')">🎮 Jasa Joki</button>
-  <button class="btn btn-outline-warning" onclick="filterProduk('barang')">📦 Barang</button>
 </div>
-
-<!-- ================= PRODUK ================= -->
-<div class="container mb-5">
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-
-    <!-- ===== MLBB ===== -->
-    <div class="col produk-item" data-kategori="joki">
-      <div class="card h-100 shadow">
-        <img src="foto/Gemini_Generated_Image_v27ztrv27ztrv27z.png" class="card-img-top">
-        <div class="card-body">
-          <span class="badge bg-success mb-2">MLBB</span>
-          <h5>Joki Rank MLBB</h5>
-          <p>Rp 2.000 / bintang</p>
-          <p class="fw-bold text-danger">Mulai Rp 2.000</p>
-        </div>
-        <div class="card-footer">
-          <button class="btn btn-success w-100">Pesan</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- ===== GENSHIN EXPLORE ===== -->
-    <div class="col produk-item" data-kategori="joki">
-      <div class="card h-100 shadow">
-        <img src="foto/mondo.png" class="card-img-top">
-        <div class="card-body">
-          <span class="badge bg-success mb-2">Genshin</span>
-          <h5>Explore Mondstadt</h5>
-          <p>Rp 10.000 / 10%</p>
-        </div>
-        <div class="card-footer">
-          <button class="btn btn-success w-100">Pesan</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="col produk-item" data-kategori="joki">
-      <div class="card h-100 shadow">
-        <img src="foto/Cuplikan layar 2025-12-24 160945.png" class="card-img-top">
-        <div class="card-body">
-          <span class="badge bg-success mb-2">Genshin</span>
-          <h5>Explore Liyue</h5>
-          <p>Rp 15.000 / 10%</p>
-        </div>
-        <div class="card-footer">
-          <button class="btn btn-success w-100">Pesan</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="col produk-item" data-kategori="joki">
-      <div class="card h-100 shadow">
-        <img src="foto/inazuma.png" class="card-img-top">
-        <div class="card-body">
-          <span class="badge bg-success mb-2">Genshin</span>
-          <h5>Explore Inazuma</h5>
-          <p>Rp 20.000 / 10%</p>
-        </div>
-        <div class="card-footer">
-          <button class="btn btn-success w-100">Pesan</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="col produk-item" data-kategori="joki">
-      <div class="card h-100 shadow">
-        <img src="foto/sumeru.png" class="card-img-top">
-        <div class="card-body">
-          <span class="badge bg-success mb-2">Genshin</span>
-          <h5>Explore Sumeru</h5>
-          <p>Rp 25.000 / 10%</p>
-        </div>
-        <div class="card-footer">
-          <button class="btn btn-success w-100">Pesan</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- ===== GENSHIN UPGRADE ===== -->
-    <div class="col produk-item" data-kategori="joki">
-      <div class="card h-100 shadow">
-        <img src="foto/arlecchino-copy-1024x683.webp" class="card-img-top">
-        <div class="card-body">
-          <span class="badge bg-success mb-2">Upgrade</span>
-          <h5>Ascension Character</h5>
-          <p>Rp 20.000 / karakter</p>
-        </div>
-        <div class="card-footer">
-          <button class="btn btn-success w-100">Pesan</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="col produk-item" data-kategori="joki">
-      <div class="card h-100 shadow">
-        <img src="foto/talent.webp" class="card-img-top">
-        <div class="card-body">
-          <span class="badge bg-success mb-2">Upgrade</span>
-          <h5>Upgrade Talent</h5>
-          <p>Rp 25.000 / karakter</p>
-        </div>
-        <div class="card-footer">
-          <button class="btn btn-success w-100">Pesan</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="col produk-item" data-kategori="joki">
-      <div class="card h-100 shadow">
-        <img src="foto/wp.jpg" class="card-img-top">
-        <div class="card-body">
-          <span class="badge bg-success mb-2">Upgrade</span>
-          <h5>Upgrade Weapon</h5>
-          <p>Rp 15.000 / senjata</p>
-        </div>
-        <div class="card-footer">
-          <button class="btn btn-success w-100">Pesan</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="col produk-item" data-kategori="joki">
-      <div class="card h-100 shadow">
-        <img src="foto/Spiral_Abyss_Domain_Entrance_Unlocked.webp" class="card-img-top">
-        <div class="card-body">
-          <span class="badge bg-success mb-2">Genshin</span>
-          <h5>Spiral Abyss Full Star</h5>
-          <p>Rp 10.000 / lantai</p>
-        </div>
-        <div class="card-footer">
-          <button class="btn btn-success w-100">Pesan</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- ===== BARANG ===== -->
-    <div class="col produk-item" data-kategori="barang">
-      <div class="card h-100 shadow">
-        <img src="foto/laptop.png" class="card-img-top">
-        <div class="card-body">
-          <span class="badge bg-warning text-dark mb-2">Barang</span>
-          <h5>Laptop Gaming</h5>
-          <p class="fw-bold text-danger">Rp 15.000.000</p>
-        </div>
-        <div class="card-footer">
-          <button class="btn btn-primary w-100">Beli</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="col produk-item" data-kategori="barang">
-      <div class="card h-100 shadow">
-        <img src="foto/keyboard.png" class="card-img-top">
-        <div class="card-body">
-          <span class="badge bg-warning text-dark mb-2">Barang</span>
-          <h5>Keyboard Mechanical Gaming</h5>
-          <p class="fw-bold text-danger">Rp 750.000</p>
-        </div>
-        <div class="card-footer">
-          <button class="btn btn-primary w-100">Beli</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="col produk-item" data-kategori="barang">
-      <div class="card h-100 shadow">
-        <img src="foto/mouse.png" class="card-img-top">
-        <div class="card-body">
-          <span class="badge bg-warning text-dark mb-2">Barang</span>
-          <h5>Mouse Gaming</h5>
-          <p class="fw-bold text-danger">Rp 2.000.000</p>
-        </div>
-        <div class="card-footer">
-          <button class="btn btn-primary w-100">Beli</button>
-        </div>
-      </div>
-    </div>
-
-  </div>
+<div class="col produk-item" data-kategori="barang">
+<div class="card h-100 shadow">
+<img src="foto/laptop.png" class="card-img-top">
+<div class="card-body"><span class="badge bg-warning text-dark mb-2">Barang</span>
+<h5>Laptop Gaming</h5><p class="fw-bold text-danger">Rp 15.000.000</p></div>
+<div class="card-footer"><button class="btn btn-primary w-100">Beli</button></div>
 </div>
-
-<!-- ================= JS ================= -->
-<script>
-function filterProduk(kategori) {
-  document.querySelectorAll('.produk-item').forEach(item => {
-    item.style.display =
-      kategori === 'all' || item.dataset.kategori === kategori
-        ? 'block'
-        : 'none';
-  });
-}
-</script>
+</div>
+</div>
+<div class="text-center mt-3">
+<button class="btn btn-outline-primary me-2" onclick="filterProduk('all')">Semua</button>
+<button class="btn btn-outline-success me-2" onclick="filterProduk('joki')">🎮 Jasa Joki</button>
+<button class="btn btn-outline-warning" onclick="filterProduk('barang')">📦 Barang</button>
+</div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+const darkSwitch=document.getElementById('darkSwitch');
+const sunIcon=document.getElementById('sunIcon');
+const moonIcon=document.getElementById('moonIcon');
+function updateIcon(){if(document.body.classList.contains('dark')){sunIcon.style.opacity='0.3';moonIcon.style.opacity='1';}else{sunIcon.style.opacity='1';moonIcon.style.opacity='0.3';}}
+if(localStorage.getItem('theme')==='dark'){document.body.classList.add('dark');darkSwitch.checked=true;}
+updateIcon();
+darkSwitch.addEventListener('change',()=>{document.body.classList.toggle('dark');localStorage.setItem('theme',document.body.classList.contains('dark')?'dark':'light');updateIcon();});
+
+function filterProduk(kategori){
+document.querySelectorAll('.produk-item').forEach(item=>{item.style.display=(kategori==='all'||item.dataset.kategori===kategori)?'block':'none';});
+}
+</script>
 </body>
 </html>
